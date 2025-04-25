@@ -1,62 +1,44 @@
 #include "Phone.h"
 
+
+Phone::~Phone() {
+    cout << "Phone Destructor: " << model << endl;
+}
+
 void Phone::Call() {
-    cout << "Стандартний рингтон телефона" << endl;
-}
-
-void Samsung::Call() {
-    cout << "Стандартний рингтон Samsung" << endl;
-}
-
-void Samsung::Call(string call) {
-    cout << "Рингтон Samsung " << call << endl;
-}
-
-void Iphone::Call() {
-    cout << "Стандартний рингтон Iphone" << endl;
-}
-
-void Iphone::Call(string call) {
-    cout << "Рингтон Iphone " << call << endl;
+    cout << "Calling " << call << " from " << model << endl;
 }
 
 void Phone::infoPhone() {
-    cout << "Інформація про телефон:\n1) " << "Модель - " << model << "\n2) Колір - " << color << "\n3) Вартість - "
-    << price << "\n4) Ємкість аккумулятора " << battery << endl;
+    cout << "Model: " << model << ", Color: " << color
+         << ", Battery: " << battery << "%, Price: $" << price << endl;
 }
 
-void Samsung::infoPhone() {
-    cout << "Інформація про Samsung:\n1) " << "Модель - " << model << "\n2) Колір - " << color << "\n3) Вартість - "
-    << price << "\n4) Ємкість аккумулятора " << battery << endl;
+
+SmartFeature::~SmartFeature() {
+    cout << "SmartFeature Destructor" << endl;
 }
 
-void Iphone::infoPhone() {
-    cout << "Інформація про Iphone:\n1) " << "Модель - " << model << "\n2) Колір - " << color << "\n3) Вартість - "
-    << price << "\n4) Ємкість аккумулятора " << battery << endl;
+void SmartFeature::smartAssistant() {
+    cout << model << " uses Smart Assistant." << endl;
 }
 
-void IphoneMini::infoPhone() {
-    cout << "Інформація про Iphone mini:\n1) " << "Модель - " << model << "\n2) Колір - " << color << "\n3) Вартість - "
-    << price << "\n4) Ємкість аккумулятора " << battery << endl;
+
+Iphone::~Iphone() {
+    cout << "Iphone Destructor" << endl;
 }
 
-void IphonePro::infoPhone() {
-    cout << "Інформація про Iphone pro:\n1) " << "Модель - " << model << "\n2) Колір - " << color << "\n3) Вартість - "
-    << price << "\n4) Ємкість аккумулятора " << battery << endl;
+void Iphone::iosFeature() {
+    cout << model << " uses iOS features." << endl;
 }
 
-void Samsung::timeToPhoneOff() {
-    cout << "Звичайний Samsung працює в нормальній температурі приблизно 8-13 годин при активному використанні" << endl;
+IphoneMini::~IphoneMini() {
+    cout << "IphoneMini Destructor" << endl;
 }
 
-void Iphone::timeToPhoneOff() {
-    cout << "Звичайний iPhone працює в нормальній температурі приблизно 10-15 годин при активному використанні" << endl;
-}
-
-void IphoneMini::timeToPhoneOff() {
-    cout << "iPhone Mini працює приблизно 8-12 годин при активному використанні." << endl;
-}
-
-void IphonePro::timeToPhoneOff() {
-    cout << "iPhone Pro працює приблизно 12-20 годин при активному використанні." << endl;
+void IphoneMini::showAllFeatures() {
+    infoPhone();
+    iosFeature();
+    smartAssistant();
+    cout << endl;
 }
