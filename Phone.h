@@ -61,6 +61,20 @@ class Iphone : virtual public Phone {
         void iosFeature();
 };
 
+
+class IphonePro : public Iphone, public SmartFeature {
+    public:
+        IphonePro(string initCall, string initModel, string initColor, int initBattery, int initPrice)
+            : Phone(initCall, initModel, initColor, initBattery, initPrice),
+              Iphone(initCall, initModel, initColor, initBattery, initPrice),
+              SmartFeature(initCall, initModel, initColor, initBattery, initPrice){
+            cout << "IphonePro Constructor\n" << endl;
+        }
+
+        ~IphonePro();
+        void showAllFeatures();
+};
+
 class IphoneMini : public Iphone, public SmartFeature, public SmartSecurity{
     public:
         IphoneMini(string initCall, string initModel, string initColor, int initBattery, int initPrice)

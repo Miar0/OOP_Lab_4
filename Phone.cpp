@@ -41,6 +41,17 @@ IphoneMini::~IphoneMini() {
     cout << "IphoneMini Destructor" << endl;
 }
 
+IphonePro::~IphonePro() {
+    cout << "IphonePro Destructor" << endl;
+}
+
+void IphonePro::showAllFeatures() {
+    infoPhone();
+    iosFeature();
+    smartAssistant();
+    cout << endl;
+}
+
 void IphoneMini::showAllFeatures() {
     infoPhone();
     iosFeature();
